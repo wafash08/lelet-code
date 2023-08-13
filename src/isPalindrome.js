@@ -7,6 +7,7 @@
  */
 
 export function isPalindrome(x) {
+  // immadiately return false if x is negative
   if (x < 0) {
     return false;
   }

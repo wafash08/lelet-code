@@ -12,4 +12,10 @@ describe("Palindrome Number", () => {
 
     expect(result).toBe(false);
   });
+
+  it("should return false if the number is negative", () => {
+    const result = isPalindrome(-121);
+
+    expect(result).toBe(false);
+  });
 });
