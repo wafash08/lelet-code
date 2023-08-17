@@ -5,7 +5,7 @@
  */
 
 export function getIntersection(arr1, arr2) {
-  const intersections = [];
+  const intersection = [];
   const hashTable = {};
 
   for (const value of arr1) {
@@ -14,9 +14,9 @@ export function getIntersection(arr1, arr2) {
 
   for (const value of arr2) {
     if (hashTable[value]) {
-      intersections.push(value);
+      intersection.push(value);
     }
   }
 
-  return intersections;
+  return intersection;
 }
