@@ -58,7 +58,7 @@ function getIntegerFromRoman(roman) {
  * @returns {boolean}
  */
 function isValidRoman(str) {
-  return ROMANS.has(str);
+  return ROMANS.has(str.toUpperCase());
 }
 
 console.log(romanToInteger("XIV"));
