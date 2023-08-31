@@ -6,4 +6,10 @@ describe("Two Sum", () => {
 
     expect(result).toEqual([0, 1]);
   });
+
+  it("should return [] if there is no match", () => {
+    const result = twoSum([2, 7, 11, 13], 100);
+
+    expect(result).toEqual([]);
+  });
 });
