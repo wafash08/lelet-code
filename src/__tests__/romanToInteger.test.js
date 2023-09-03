@@ -12,4 +12,16 @@ describe("Roman To Integer", () => {
 
     expect(result).toBe(0);
   });
+  
+  it("should convert IX to 9", () => {
+    const result = romanToInteger("IX");
+
+    expect(result).toBe(9);
+  });
+  
+  it("should convert x with lowercase to 10", () => {
+    const result = romanToInteger("x");
+
+    expect(result).toBe(10);
+  });
 });
