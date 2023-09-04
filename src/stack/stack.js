@@ -37,7 +37,7 @@ export class Stack {
 
   /**
    * Insert the element at the last position in the stack
-   * @param {string[]} element
+   * @param {string} element
    */
   push(element) {
     this.#data.push(element);
