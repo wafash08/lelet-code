@@ -10,6 +10,12 @@ describe("Isomorphic string", () => {
   it("should return true", () => {
     const result = isIsomorphic("abc", "abc");
 
+    expect(result).toBe(true);
+  });
+
+  it("should return false", () => {
+    const result = isIsomorphic("abc", "abb");
+
     expect(result).toBe(false);
   });
 });
