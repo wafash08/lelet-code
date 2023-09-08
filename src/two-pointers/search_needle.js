@@ -26,3 +26,5 @@ export function search_needle(haystack, needle) {
   }
   return -1;
 }
+
+console.log(search_needle("abcdefgh", "def")); // 3
