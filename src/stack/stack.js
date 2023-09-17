@@ -4,7 +4,7 @@
 
 export class Stack {
   /**
-   * initialize data
+   * initialize data as private property
    */
   #data;
   constructor() {
