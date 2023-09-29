@@ -40,4 +40,4 @@ function fibWithLoop(n) {
 }
 
 // console.log(fib(10));
-console.log(fibWithLoop(10));
+console.log(fibWithLoop(5));

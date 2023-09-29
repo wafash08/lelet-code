@@ -9,16 +9,16 @@ export function max(array) {
     return array[0];
   }
 
-  // O(N2)
+  // O(2 pangkat n)
   // if (array[0] > max(array.slice(1, array.length))) {
   //   return array[0];
   // } else {
   //   return max(array.slice(1, array.length));
   // }
 
-  // O(2pangkatN)
+  // O(N)
   let maxOfRemainder = max(array.slice(1, array.length));
-  console.log("maxOfRemainder", maxOfRemainder);
+  // console.log("maxOfRemainder", maxOfRemainder);
   if (array[0] > maxOfRemainder) {
     return array[0];
   } else {
