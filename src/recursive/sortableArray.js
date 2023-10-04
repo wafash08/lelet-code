@@ -69,4 +69,43 @@ export class SortableArray {
     // recursively call this quicksort method on whatever is to the right of the pivot
     this.quicksort(pivotIndex + 1, rightIndex);
   }
+
+  /**
+   *
+   * @param {number} nthLowestValue
+   * @param {number} leftIndex
+   * @param {number} rightIndex
+   * @returns {number}
+   */
+  quickselect(nthLowestValue, leftIndex, rightIndex) {
+    // base case - that is, that the subarray has one cell, hence we've found the value we're looking for
+    if (rightIndex - leftIndex <= 1) {
+      console.log("leftIndex >> ", leftIndex);
+      console.log("rightIndex >> ", rightIndex);
+      console.log("hello");
+      console.log("array >> ", this.array);
+      return this.array[leftIndex];
+    }
+    // partition the array and grab the index of the pivot
+    const pivotIndex = this.partition(leftIndex, rightIndex);
+    // console.log("leftIndex >> ", leftIndex);
+    // console.log("rightIndex >> ", rightIndex);
+    // console.log("pivotIndex >> ", pivotIndex);
+    // if the value is in the left of the pivot
+    if (nthLowestValue < pivotIndex) {
+      // recursively perform quickselect on the subarray to the left of the pivot
+      this.quickselect(nthLowestValue, leftIndex, pivotIndex - 1);
+      // if the value is in the right of the pivot
+    } else if (nthLowestValue > pivotIndex) {
+      // recursively perform quickselect on the subarray to the right of the pivot
+      this.quickselect(nthLowestValue, pivotIndex + 1, rightIndex);
+      // if the value === pivot index
+    } else {
+      // if after the partition, the pivot position is in the same spot as nthLowestValue, we've found the value we are looking for
+      // console.log("pivotIndex inside >> ", pivotIndex);
+      // console.log("array inside >> ", this.array);
+      // console.log("the value >> ", this.array[pivotIndex]);
+      return this.array[pivotIndex];
+    }
+  }
 }
