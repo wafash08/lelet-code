@@ -64,4 +64,65 @@ describe("Linkedlist", () => {
       expect(value).toBe(null);
     });
   });
+
+  describe("insertAt", () => {
+    it("should insert at the beginning", () => {
+      const node1 = new Node("a");
+      const node2 = new Node("b");
+
+      node1.nextNode = node2;
+
+      const list = new Linkedlist(node1);
+      list.insertAt(0, "w");
+      expect(list.firstNode.data).toBe("w");
+    });
+
+    it("should insert anywhere other than the beginning", () => {
+      const node1 = new Node("a");
+      const node2 = new Node("b");
+      const node3 = new Node("c");
+
+      node1.nextNode = node2;
+      node2.nextNode = node3;
+
+      const list = new Linkedlist(node1);
+      list.insertAt(1, "w");
+      list.insertAt(4, "s");
+      const valueAt1 = list.read(1);
+      const valueAt4 = list.read(4);
+      expect(valueAt1).toBe("w");
+      expect(valueAt4).toBe("s");
+    });
+  });
+
+  describe("deleteAt", () => {
+    it("should delete at the beginning", () => {
+      const node1 = new Node("a");
+      const node2 = new Node("b");
+      const node3 = new Node("c");
+
+      node1.nextNode = node2;
+      node2.nextNode = node3;
+
+      const list = new Linkedlist(node1);
+      list.deleteAt(0);
+      expect(list.firstNode.data).toBe("b");
+    });
+
+    it("should delete anywhere other than the beginning", () => {
+      const node1 = new Node("a");
+      const node2 = new Node("b");
+      const node3 = new Node("c");
+
+      node1.nextNode = node2;
+      node2.nextNode = node3;
+
+      const list = new Linkedlist(node1);
+      list.deleteAt(2);
+      const valueAt2 = list.read(2);
+      const valueAt1 = list.read(1);
+      expect(valueAt2).toBe(null);
+      expect(valueAt1).toBe("b");
+    });
+  });
 });
