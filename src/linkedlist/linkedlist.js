@@ -111,4 +111,40 @@ export class Linkedlist {
     // we change the link of the currentNode to point to the node after deleted node, leaving the node we want to delete out of the list
     currentNode.nextNode = nodeAfterDeletedNode;
   }
+
+  print() {
+    let currentNode = this.firstNode;
+    while (currentNode) {
+      console.log(currentNode.data);
+      currentNode = currentNode.nextNode;
+    }
+  }
+
+  getLastElement() {
+    let currentNode = this.firstNode;
+    let currentIndex = 0;
+    while (currentNode.nextNode) {
+      currentNode = currentNode.nextNode;
+      currentIndex++;
+    }
+
+    return currentNode.data;
+  }
+
+  reverse() {
+    let currentNode = this.firstNode;
+    let previousNode = null;
+
+    while (currentNode) {
+      let nextNode = currentNode.nextNode;
+      currentNode.nextNode = previousNode;
+      previousNode = currentNode;
+      currentNode = nextNode;
+    }
+
+    this.firstNode = previousNode;
+  }
+
+  // todo
+  // delete at the middle
 }

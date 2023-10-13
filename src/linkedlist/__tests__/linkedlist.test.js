@@ -125,4 +125,49 @@ describe("Linkedlist", () => {
       expect(valueAt1).toBe("b");
     });
   });
+
+  describe("print", () => {
+    it("should print all the list", () => {
+      const node1 = new Node("a");
+      const node2 = new Node("b");
+      const node3 = new Node("c");
+
+      node1.nextNode = node2;
+      node2.nextNode = node3;
+
+      const list = new Linkedlist(node1);
+      list.print();
+    });
+  });
+
+  describe("getLastElement", () => {
+    it("should return the last element of the list", () => {
+      const node1 = new Node("a");
+      const node2 = new Node("b");
+      const node3 = new Node("c");
+
+      node1.nextNode = node2;
+      node2.nextNode = node3;
+
+      const list = new Linkedlist(node1);
+      const lastElement = list.getLastElement();
+      expect(lastElement).toBe("c");
+    });
+  });
+
+  describe("reverse", () => {
+    it("should reverse the list", () => {
+      const node1 = new Node("a");
+      const node2 = new Node("b");
+      const node3 = new Node("c");
+
+      node1.nextNode = node2;
+      node2.nextNode = node3;
+
+      const list = new Linkedlist(node1);
+      list.reverse();
+      expect(list.firstNode.data).toBe("c");
+      expect(list.getLastElement()).toBe("a");
+    });
+  });
 });
