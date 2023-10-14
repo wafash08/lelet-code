@@ -31,6 +31,15 @@ export class DoublyLinkedlist {
     this.firstNode = this.firstNode.nextNode;
     return removedNode;
   }
+
+  printInReverse() {
+    let currentNode = this.lastNode;
+    console.log(currentNode);
+    while (currentNode) {
+      console.log(currentNode.data);
+      currentNode = currentNode.previousNode;
+    }
+  }
 }
 
 // const doubly = new DoublyLinkedlist()

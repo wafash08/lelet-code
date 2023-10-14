@@ -51,5 +51,14 @@ describe("Doubly linkedlist", () => {
       expect(doubly.firstNode.data).toBe("d");
       expect(doubly.lastNode.data).toBe("e");
     });
+
+    it("should print in reverse", () => {
+      const doubly = new DoublyLinkedlist();
+      doubly.insertAtEnd("c");
+      doubly.insertAtEnd("d");
+      doubly.insertAtEnd("e");
+
+      doubly.printInReverse();
+    });
   });
 });
